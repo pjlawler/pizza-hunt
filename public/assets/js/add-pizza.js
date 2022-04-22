@@ -64,10 +64,12 @@ const handlePizzaSubmit = event => {
     .then(postResponse => {
       alert('Pizza created successfully!');
       console.log(postResponse);
+      window.location.replace('/');
     })
     .catch(err => {
       console.log(err);
       saveRecord(formData);
+      alert('No network connection...');
     });
 };
 

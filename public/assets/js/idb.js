@@ -52,16 +52,6 @@ function uploadPizza() {
 
 
     getAll.onsuccess = function() {
-
-        console.log(`
-        ========================
-        upload pizza!!!!!!
-        ========================
-        ${getAll.result}
-        
-        `)
-
-
         if(getAll.result.length > 0){
             fetch('/api/pizzas', {
                 method: 'POST',
@@ -84,6 +74,7 @@ function uploadPizza() {
                 pizzaObjectStore.clear();
 
                 alert('All saved pizza has been submitted!');
+                window.location.replace('/');
             })
             .catch(err => {
                 console.log(err);
